@@ -9,8 +9,6 @@
 
 - [Challenge Languages](#Languages)
 - [Instructions](#Instructions)
-- [Style Guide](#Style-Guide)
-- [Preview](#Preview)
 
 ---
 
@@ -25,34 +23,27 @@
 
 ## Instructions
 
-- [X] Find teammates
-- [X] Research about the [IP Geolocation API by IPify](https://geo.ipify.org/) that will return you a location for a specific ip or domain
-- [X] Research about the [LeafletJS](https://leafletjs.com/) library for integrating a map in your website.
-- [X] (optional) Think how you can use [Cloudflare current ip trace](https://www.cloudflare.com/cdn-cgi/trace) api that returns you the client ip to your advantage.
-- [X] Clone this repository.
-- [X] Checkout to the starting-files branch
-- [X] Try to mimic the following site ( listed bellow ).
-- [X] Make the functional part of the page work, every time a user list a domain the map should update to the correct location and the domain details should be displayed on the screen ( like in the preview below ).
+In this project you will build your first own JS single page application store. Following is the project requirements, please fill free to experiment and add features, animations or whatever you want. 
 
----
+### Requirements
 
-## STYLE GUIDE: 
+### Overall
 
-Please fill free to use this style guide to complete the task.
+[ ] You can only use JS vanilla to complete this project.
+[ ] The project will contain 3 webpack config files : common, development, and production. In addition the project will support the corresponding scripts in the package.json file ('build', 'start', etc..). 
 
-### Colors: 
-    Main headline = white
-    Text = hsl(0, 0%, 17%)
-    Titles = hsl(0, 0%, 59%)
+### Store catalog
 
-### Fonts (google font):
-    Family = [Rubik](https://fonts.google.com/specimen/Rubik) Font size (text input) = 18px
-    Weights = 400, 500, 700
+[ ] The catalog is a responsive grid of products.
+[ ] Every product in the catalog will have a name, a description, an image, a price, add To Cart Button and adjust quantity button.
+[ ] Important note -> after adding to cart the product quantity will return to it's initial value and will not be connected in any way to the corresponding product quantity in the cart.
 
----
+### Cart
 
-## Preview
+[ ] The cart will let the user know when it's empty ( by a message, alert, popup, etc...).
+[ ] Every product in the cart will have name, quantity and a total price ( calculated with the quantity ) and remove from cart button.
+[ ] The client will be able to adjust the product quantity from the cart and get instantly updated total price.
+[ ] The cart will contain a responsive total price which will instantly update for every change in the cart.
 
-![!desktopPreview](./assets/design/active-states.jpg)
-![!mobilePreview](./assets/design/mobile-design.jpg)
+*** GOOD LUCK ***
 
