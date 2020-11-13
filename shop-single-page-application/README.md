@@ -31,6 +31,7 @@ In this project you will build your first own JS single page application store. 
 
 - [ ] You can only use JS vanilla to complete this project.
 - [ ] The project will contain 3 webpack config files : common, development, and production. In addition the project will support the corresponding scripts in the package.json file (it is recomnded to name the production webpack script as 'build' and name the development webpack sctipt as  'start').
+- [ ] The catalog sould be presented as the main part of the page, and the cart as a right sidebar.
 
 ### Store catalog
 
@@ -40,7 +41,7 @@ In this project you will build your first own JS single page application store. 
 
 ### Cart
 
-- [ ] The cart will let the user know when it's empty ( by a message, alert, popup, etc...).
+- [ ] The cart will let the user know when it's empty. ( as a message in the cart sidebar ).
 - [ ] Every product in the cart will have name, quantity and a total price ( calculated with the quantity ) and remove from cart button.
 - [ ] The client will be able to adjust the product quantity from the cart and get instantly updated total price.
 - [ ] The cart will contain a responsive total price which will instantly update for every change in the cart.
