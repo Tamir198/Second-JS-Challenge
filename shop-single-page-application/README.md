@@ -1,5 +1,5 @@
 
-# ROCK PAPER SCISSORS
+# Shop Single Page Application
 
 > This project is a part of our dev-club activity and will focus on JS single page applications. This project is a real job interview home project - and you have 3 days to complete it.
  
