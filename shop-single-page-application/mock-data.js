@@ -30,12 +30,11 @@ const data = [
     price: 1.20
   },
   {
-    name: "Bazil",
+    name: "Basil",
     description: "Green and healthy",
     image: "",
     price: 0.99
   },
-  
   {
     name: "Orange",
     description: "Sweet and orange",
