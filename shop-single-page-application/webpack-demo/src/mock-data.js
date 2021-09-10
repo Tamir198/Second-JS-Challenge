@@ -12,45 +12,45 @@ const data = [
   {
     name: "Banana",
     description: "You eat this",
-    // TODO fix path of images
     image: Banana,
-    price: 6.5
+    price: 6
   },
   {
     name: "Apple",
     description: "Its red",
     image: Apple,
-    price: 4.5
+    price: 4
   },
   {
     name: "Tomato",
     description: "Red and sweet",
     image: Tomato,
-    price: 3.5
+    price: 3
   },
   {
     name: "Melon",
     description: "For the summer days",
     image: Melon,
-    price: 7.5
+    price: 7
+
   },
   {
     name: "Cabbage",
     description: "Healthy",
     image: Cabbage,
-    price: 1.20
+    price: 3
   },
   {
     name: "Basil",
     description: "Green and healthy",
     image: Basil,
-    price: 0.99
+    price: 1
   },
   {
     name: "Orange",
     description: "Sweet and orange",
     image: Orange,
-    price: 5.0
+    price: 5
   },
   {
     name: "Avocado",
@@ -62,7 +62,7 @@ const data = [
     name: "Grapes",
     description: "Refreshing",
     image: Grapes,
-    price: 9.5
+    price: 9
   }
 ]
 

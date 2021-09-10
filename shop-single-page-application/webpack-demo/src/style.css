@@ -1,3 +1,26 @@
+:root{
+  --pixles20: 20px;
+}
+
+body{
+  background-color: gray;
+}
+
+.show{
+  display: block;
+}
+
+.hide{
+  display: none !important;
+}
+
+.cart{
+  width: 30%;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+}
+
 h1{
   margin: 50px auto;
   width: 10%;
@@ -5,13 +28,11 @@ h1{
 }
 
 image{
-  width: 25%;
-  height: 25%;
+  object-fit:scale-down;
 }
 
 .grid-container {
   max-width: 100%;
-  float: center;
   margin: var(--pixles20);
   display:grid;
   justify-content: center;
@@ -20,20 +41,32 @@ image{
 
 .grid-item{
   margin: 30px;
-  border-radius:10px;
   display:flex;
+  justify-content: flex-end;
   flex-wrap: wrap;
   flex-flow: column;
-  align-items:center;
   justify-content:center;
-  font-family:sans-serif;
 }
 
 .card {
+  max-width: 250px;
+  height: max-content;
+  border-radius:10px solid black;
+  border: 2px solid black;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .card:hover {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+
+.footer {
+  position: fixed;
+  left: 40%;
+  bottom: 0;
+  width: 20%;
+  background-color: palegoldenrod;
+  color: purple;
+  text-align: center;
 }
 
