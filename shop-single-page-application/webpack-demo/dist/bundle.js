@@ -16,7 +16,7 @@
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"h1{\\r\\n  margin: 50px auto;\\r\\n  width: 10%;\\r\\n  padding: 10px;\\r\\n}\\r\\n\\r\\n.grid-container {\\r\\n  max-width: 100%;\\r\\n  float: center;\\r\\n  margin: var(--pixles20);\\r\\n  display:grid;\\r\\n  justify-content: center;\\r\\n  grid-template-columns: 25% 25% 25%; \\r\\n}\\r\\n\\r\\n.grid-item{\\r\\n  margin: 30px;\\r\\n  border-radius:10px;\\r\\n  display:flex;\\r\\n  flex-wrap: wrap;\\r\\n  flex-flow: column;\\r\\n  align-items:center;\\r\\n  justify-content:center;\\r\\n  font-family:sans-serif;\\r\\n}\\r\\n\\r\\n.card {\\r\\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\\r\\n}\\r\\n\\r\\n.card:hover {\\r\\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);\\r\\n}\\r\\n\\r\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://webpack-demo/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"h1{\\r\\n  margin: 50px auto;\\r\\n  width: 10%;\\r\\n  padding: 10px;\\r\\n}\\r\\n\\r\\n\\r\\nimage{\\r\\n  width: 25%;\\r\\n  height: 25%;\\r\\n}\\r\\n\\r\\n.grid-container {\\r\\n  max-width: 100%;\\r\\n  float: center;\\r\\n  margin: var(--pixles20);\\r\\n  display:grid;\\r\\n  justify-content: center;\\r\\n  grid-template-columns: 25% 25% 25%; \\r\\n}\\r\\n\\r\\n.grid-item{\\r\\n  margin: 30px;\\r\\n  border-radius:10px;\\r\\n  display:flex;\\r\\n  flex-wrap: wrap;\\r\\n  flex-flow: column;\\r\\n  align-items:center;\\r\\n  justify-content:center;\\r\\n  font-family:sans-serif;\\r\\n}\\r\\n\\r\\n.card {\\r\\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\\r\\n}\\r\\n\\r\\n.card:hover {\\r\\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);\\r\\n}\\r\\n\\r\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://webpack-demo/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -125,7 +125,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, style) {\
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _mock_data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mock-data.js */ \"./src/mock-data.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\r\n\r\nconst container = document.querySelector('.grid-container')\r\nwindow.onload = function () {\r\n\r\n  _mock_data_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].forEach(item => {\r\n    const cell = document.createElement('div');\r\n    cell.innerHTML = `\r\n    <div class=\"card\">\r\n      <img alt=\"Avatar\" style=\"width:100%\">\r\n       <div class=\"grid-item\">\r\n         <h4><b>Name: ${item.name}</b></h4> \r\n          <h4><b>Price: ${item.price}$</b></h4> \r\n         <p>Description: ${item.description}</p> \r\n         <button class=\"grid-button\" >Add to cart</button>\r\n      </div>\r\n   </div>\r\n    `;\r\n\r\n    addListnersToBUttons();\r\n    container.appendChild(cell).className = \"grid-item\";\r\n  });\r\n}\r\n\r\nconst addListnersToBUttons = () => {\r\n  let buttons = document.querySelectorAll(\".grid-button\");\r\n  for (const btn of buttons) {\r\n    btn.addEventListener(\"click\", ()=>console.log(\"TODO add item to cart\"));\r\n  }\r\n}; \n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _mock_data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mock-data.js */ \"./src/mock-data.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\r\n\r\nconst container = document.querySelector('.grid-container')\r\nwindow.onload = function () {\r\n\r\n  _mock_data_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].forEach(item => {\r\n    const newGridItem = document.createElement('div');\r\n    newGridItem.innerHTML = `\r\n    <div class=\"card\">\r\n      <img src=${item.image} style=\"width:100%\">\r\n       <div class=\"grid-item\">\r\n         <h4><b>Name: ${item.name}</b></h4> \r\n          <h4><b>Price: ${item.price}$</b></h4> \r\n         <p>Description: ${item.description}</p> \r\n         <button class=\"grid-button\" >Add to cart</button>\r\n      </div>\r\n   </div>\r\n    `;\r\n\r\n    addListnersToBUttons();\r\n    container.appendChild(newGridItem).className = \"grid-item\";\r\n  });\r\n}\r\n\r\nconst addListnersToBUttons = () => {\r\n  let buttons = document.querySelectorAll(\".grid-button\");\r\n  for (const btn of buttons) {\r\n    btn.addEventListener(\"click\", (e)=>console.log(`TODO add item to cart ${e}`));\r\n  }\r\n}; \n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
 
 /***/ }),
 
@@ -136,7 +136,106 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst data = [\r\n  {\r\n    name: \"Banana\",\r\n    description: \"You eat this\",\r\n    image: \"./assets\\apple.jpg\",\r\n    price: 6.5\r\n  },\r\n  {\r\n    name: \"Apple\",\r\n    description: \"Its red\",\r\n    image: \"\",\r\n    price: 4.5\r\n  },\r\n  {\r\n    name: \"Tomato\",\r\n    description: \"Red and sweet\",\r\n    image: \"\",\r\n    price: 3.5\r\n  },\r\n  {\r\n    name: \"Melon\",\r\n    description: \"For the summer days\",\r\n    image: \"\",\r\n    price: 7.5\r\n  },\r\n  {\r\n    name: \"Cabbage\",\r\n    description: \"Healthy\",\r\n    image: \"\",\r\n    price: 1.20\r\n  },\r\n  {\r\n    name: \"Basil\",\r\n    description: \"Green and healthy\",\r\n    image: \"\",\r\n    price: 0.99\r\n  },\r\n  {\r\n    name: \"Orange\",\r\n    description: \"Sweet and orange\",\r\n    image: \"\",\r\n    price: 5.0\r\n  },\r\n  {\r\n    name: \"Avocado\",\r\n    description: \"For maximum taste add salt\",\r\n    image: \"\",\r\n    price: 16\r\n  },\r\n  {\r\n    name: \"Grapes\",\r\n    description: \"Refreshing\",\r\n    image: \"\",\r\n    price: 9.5\r\n  }\r\n]\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (data);\n\n//# sourceURL=webpack://webpack-demo/./src/mock-data.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _assets_banana_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assets/banana.jpg */ \"./src/assets/banana.jpg\");\n/* harmony import */ var _assets_apple_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/apple.jpg */ \"./src/assets/apple.jpg\");\n/* harmony import */ var _assets_avocado_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/avocado.jpg */ \"./src/assets/avocado.jpg\");\n/* harmony import */ var _assets_basil_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/basil.jpg */ \"./src/assets/basil.jpg\");\n/* harmony import */ var _assets_cabbage_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/cabbage.jpg */ \"./src/assets/cabbage.jpg\");\n/* harmony import */ var _assets_grapes_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/grapes.jpg */ \"./src/assets/grapes.jpg\");\n/* harmony import */ var _assets_melon_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/melon.jpg */ \"./src/assets/melon.jpg\");\n/* harmony import */ var _assets_orange_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./assets/orange.jpg */ \"./src/assets/orange.jpg\");\n/* harmony import */ var _assets_tomato_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./assets/tomato.jpg */ \"./src/assets/tomato.jpg\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nconst data = [\r\n  {\r\n    name: \"Banana\",\r\n    description: \"You eat this\",\r\n    // TODO fix path of images\r\n    image: _assets_banana_jpg__WEBPACK_IMPORTED_MODULE_0__,\r\n    price: 6.5\r\n  },\r\n  {\r\n    name: \"Apple\",\r\n    description: \"Its red\",\r\n    image: _assets_apple_jpg__WEBPACK_IMPORTED_MODULE_1__,\r\n    price: 4.5\r\n  },\r\n  {\r\n    name: \"Tomato\",\r\n    description: \"Red and sweet\",\r\n    image: _assets_tomato_jpg__WEBPACK_IMPORTED_MODULE_8__,\r\n    price: 3.5\r\n  },\r\n  {\r\n    name: \"Melon\",\r\n    description: \"For the summer days\",\r\n    image: _assets_melon_jpg__WEBPACK_IMPORTED_MODULE_6__,\r\n    price: 7.5\r\n  },\r\n  {\r\n    name: \"Cabbage\",\r\n    description: \"Healthy\",\r\n    image: _assets_cabbage_jpg__WEBPACK_IMPORTED_MODULE_4__,\r\n    price: 1.20\r\n  },\r\n  {\r\n    name: \"Basil\",\r\n    description: \"Green and healthy\",\r\n    image: _assets_basil_jpg__WEBPACK_IMPORTED_MODULE_3__,\r\n    price: 0.99\r\n  },\r\n  {\r\n    name: \"Orange\",\r\n    description: \"Sweet and orange\",\r\n    image: _assets_orange_jpg__WEBPACK_IMPORTED_MODULE_7__,\r\n    price: 5.0\r\n  },\r\n  {\r\n    name: \"Avocado\",\r\n    description: \"For maximum taste add salt\",\r\n    image: _assets_avocado_jpg__WEBPACK_IMPORTED_MODULE_2__,\r\n    price: 16\r\n  },\r\n  {\r\n    name: \"Grapes\",\r\n    description: \"Refreshing\",\r\n    image: _assets_grapes_jpg__WEBPACK_IMPORTED_MODULE_5__,\r\n    price: 9.5\r\n  }\r\n]\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (data);\n\n//# sourceURL=webpack://webpack-demo/./src/mock-data.js?");
+
+/***/ }),
+
+/***/ "./src/assets/apple.jpg":
+/*!******************************!*\
+  !*** ./src/assets/apple.jpg ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"495815d3fd17eba58f6a.jpg\";\n\n//# sourceURL=webpack://webpack-demo/./src/assets/apple.jpg?");
+
+/***/ }),
+
+/***/ "./src/assets/avocado.jpg":
+/*!********************************!*\
+  !*** ./src/assets/avocado.jpg ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"507c2e0c85ac2ace36be.jpg\";\n\n//# sourceURL=webpack://webpack-demo/./src/assets/avocado.jpg?");
+
+/***/ }),
+
+/***/ "./src/assets/banana.jpg":
+/*!*******************************!*\
+  !*** ./src/assets/banana.jpg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"35aeaca27fdd7c3dac0c.jpg\";\n\n//# sourceURL=webpack://webpack-demo/./src/assets/banana.jpg?");
+
+/***/ }),
+
+/***/ "./src/assets/basil.jpg":
+/*!******************************!*\
+  !*** ./src/assets/basil.jpg ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"114ae337b5976705be6e.jpg\";\n\n//# sourceURL=webpack://webpack-demo/./src/assets/basil.jpg?");
+
+/***/ }),
+
+/***/ "./src/assets/cabbage.jpg":
+/*!********************************!*\
+  !*** ./src/assets/cabbage.jpg ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"98aa1e0a71b3c2d988d8.jpg\";\n\n//# sourceURL=webpack://webpack-demo/./src/assets/cabbage.jpg?");
+
+/***/ }),
+
+/***/ "./src/assets/grapes.jpg":
+/*!*******************************!*\
+  !*** ./src/assets/grapes.jpg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"f28ee9d35261e264c522.jpg\";\n\n//# sourceURL=webpack://webpack-demo/./src/assets/grapes.jpg?");
+
+/***/ }),
+
+/***/ "./src/assets/melon.jpg":
+/*!******************************!*\
+  !*** ./src/assets/melon.jpg ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"c29e6185215dd8b940fa.jpg\";\n\n//# sourceURL=webpack://webpack-demo/./src/assets/melon.jpg?");
+
+/***/ }),
+
+/***/ "./src/assets/orange.jpg":
+/*!*******************************!*\
+  !*** ./src/assets/orange.jpg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"75cfa180d1401d2c4eed.jpg\";\n\n//# sourceURL=webpack://webpack-demo/./src/assets/orange.jpg?");
+
+/***/ }),
+
+/***/ "./src/assets/tomato.jpg":
+/*!*******************************!*\
+  !*** ./src/assets/tomato.jpg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"0a2958c5fb7944875461.jpg\";\n\n//# sourceURL=webpack://webpack-demo/./src/assets/tomato.jpg?");
 
 /***/ })
 
@@ -229,6 +328,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			if (!module.children) module.children = [];
 /******/ 			return module;
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /************************************************************************/

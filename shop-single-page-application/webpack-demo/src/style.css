@@ -4,6 +4,11 @@ h1{
   padding: 10px;
 }
 
+image{
+  width: 25%;
+  height: 25%;
+}
+
 .grid-container {
   max-width: 100%;
   float: center;

@@ -6,10 +6,10 @@ const container = document.querySelector('.grid-container')
 window.onload = function () {
 
   Data.forEach(item => {
-    const cell = document.createElement('div');
-    cell.innerHTML = `
+    const newGridItem = document.createElement('div');
+    newGridItem.innerHTML = `
     <div class="card">
-      <img alt="Avatar" style="width:100%">
+      <img src=${item.image} style="width:100%">
        <div class="grid-item">
          <h4><b>Name: ${item.name}</b></h4> 
           <h4><b>Price: ${item.price}$</b></h4> 
@@ -20,13 +20,13 @@ window.onload = function () {
     `;
 
     addListnersToBUttons();
-    container.appendChild(cell).className = "grid-item";
+    container.appendChild(newGridItem).className = "grid-item";
   });
 }
 
 const addListnersToBUttons = () => {
   let buttons = document.querySelectorAll(".grid-button");
   for (const btn of buttons) {
-    btn.addEventListener("click", ()=>console.log("TODO add item to cart"));
+    btn.addEventListener("click", (e)=>console.log(`TODO add item to cart ${e}`));
   }
 }; 
