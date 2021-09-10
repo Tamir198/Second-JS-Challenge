@@ -4,7 +4,6 @@ import _ from 'lodash';
 
 const productsGrid = document.querySelector('.grid-container');
 const cartView = document.querySelector('.cart');
-//TODO edit this
 let productsInCart = {
   Apple: { totalPrice: 0, amount: 0 },
   Tomato: { totalPrice: 0, amount: 0 },
@@ -60,5 +59,33 @@ function toggleShopCart() {
   footer.addEventListener("click", () => {
     productsGrid.classList.toggle('hide');
     cartView.classList.toggle('hide');
+
+    if (!cartView.classList.contains('hide')) {
+      showCartToUser();
+    }
   });
 }
+
+
+function showCartToUser() {
+  let cart = document.querySelector('.cart');
+
+  Object.keys(productsInCart).forEach(function (key) {
+    if (productsInCart[key].amount > 0) {
+      const currentProduct = productsInCart[key];
+        let newCartItem = document.createElement('div');
+        newCartItem.innerHTML = `
+        <div class="card">
+            <div class="grid-item">
+              <h4><b>Name: ${key}</b></h4> 
+              <h4><b>Amount: ${currentProduct.amount}</b></h4> 
+              <p>Total price: ${currentProduct.totalPrice}$</p> 
+              <button 
+              class="grid-button" >Remove from cart
+              </button>
+          </div>
+        </div>
+        `;
+        cartView.appendChild(newCartItem).className = "cart-item";
+      }
+})};
