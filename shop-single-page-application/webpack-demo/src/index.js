@@ -93,9 +93,13 @@ function toggleShopAndCartPage() {
 
 function showCartToUser() {
   cartView.innerHTML = 'Your cart';
+  let totalCartPrice = 0;
   Object.keys(productsInCart).forEach(function (key) {
     if (productsInCart[key].amount > 0) {
+      
       const currentProduct = productsInCart[key];
+      totalCartPrice += currentProduct.totalPrice;
+
       let newCartItem = document.createElement('div');
       newCartItem.innerHTML = `
         <div class="card">
@@ -115,7 +119,14 @@ function showCartToUser() {
         `;
       cartView.appendChild(newCartItem).className = "cart-item";
     }
+    
   })
+
+  let totalPriceDiv = document.createElement('div');
+    totalPriceDiv.innerHTML = `<h4><b>Total price is: ${totalCartPrice}</b></h4>`;
+
+    cartView.appendChild(totalPriceDiv).className = "cart-item";
+
   handleCartButtonsClicked();
   handleCartSliderValueChanged();
 };
