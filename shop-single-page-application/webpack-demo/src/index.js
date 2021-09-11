@@ -143,7 +143,6 @@ const setTotalCartPrice = ()=>{
     cartView.appendChild(totalPriceDiv).className = "cart-item total-cart-price";
   }
   
-  
 };
 
 const handleCartButtonsClicked = () => {

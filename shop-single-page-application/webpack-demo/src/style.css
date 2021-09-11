@@ -4,6 +4,7 @@
 
 body{
   background-color: gray;
+  font-size: 16px;
 }
 
 .show{
@@ -35,8 +36,10 @@ image{
   max-width: 100%;
   margin: var(--pixles20);
   display:grid;
-  justify-content: center;
+  justify-content: space-evenly;
   grid-template-columns: 25% 25% 25%; 
+  grid-column-gap:  var(--pixles20);
+  grid-row-gap:  var(--pixles20);
 }
 
 .grid-item{
@@ -70,3 +73,17 @@ image{
   text-align: center;
 }
 
+
+@media only screen and (max-width: 500px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 37px) {
+  .grid-container {
+    grid-template-columns: 80%; 
+  }
+}
