@@ -27,6 +27,10 @@ window.onload = () => {
          <h4><b>Name: ${item.name}</b></h4> 
           <h4><b>Price: ${item.price}$</b></h4> 
          <p>Description: ${item.description}</p> 
+         <div>
+         <input class="shop-slider" currentProduct="${item.name}" value="1" type="range" min="1" max="10">
+         <output class="shop-slider-value">1</output> 
+         </div>
          <button 
          class="grid-button" 
          productType="${item.name}" 
@@ -38,22 +42,40 @@ window.onload = () => {
     productsGrid.appendChild(newGridItem).className = "grid-item";
   });
 
+  handleShopSlidersValueChanged();
   handleGridButtonsClick();
   toggleShopAndCartPage();
 }
 
+function handleShopSlidersValueChanged() {
+  const cartSliders = Array.from(document.querySelectorAll('.shop-slider'));
+
+  cartSliders.forEach(slider => {
+    slider.addEventListener("change",() =>{
+      slider.nextElementSibling.value = slider.value;
+    })
+  });
+
+};
+
 const handleGridButtonsClick = () => {
   let buttons = Array.from(document.querySelectorAll(".grid-button"));
-  console.log(buttons);
   buttons.forEach(btn => {
-    btn.addEventListener("click", (e) => {
+    btn.addEventListener("click", () => {
       const type = btn.getAttribute("productType");
       const price = btn.getAttribute("productPrice");
-      productsInCart[type].amount += 1;
+      console.log(btn.closest('div').querySelector('.shop-slider').value);
+      const amountPIcked = parseInt(btn.closest('div').querySelector('.shop-slider').value);
+      productsInCart[type].amount += amountPIcked;
       productsInCart[type].totalPrice = (productsInCart[type].amount * price);
     });
+    //TODO change slider to 1 after the button was pressed
+    btn.closest('div').querySelector('.shop-slider').textContent = "1";
+
   });
 };
+
+
 
 function toggleShopAndCartPage() {
   let footer = document.getElementById('footer-text');
