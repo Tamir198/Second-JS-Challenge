@@ -93,12 +93,10 @@ function toggleShopAndCartPage() {
 
 function showCartToUser() {
   cartView.innerHTML = 'Your cart';
-  let totalCartPrice = 0;
-  Object.keys(productsInCart).forEach(function (key) {
+  Object.keys(productsInCart).forEach((key) =>{
     if (productsInCart[key].amount > 0) {
       
       const currentProduct = productsInCart[key];
-      totalCartPrice += currentProduct.totalPrice;
 
       let newCartItem = document.createElement('div');
       newCartItem.innerHTML = `
@@ -122,13 +120,30 @@ function showCartToUser() {
     
   })
 
-  let totalPriceDiv = document.createElement('div');
-    totalPriceDiv.innerHTML = `<h4><b>Total price is: ${totalCartPrice}</b></h4>`;
-
-    cartView.appendChild(totalPriceDiv).className = "cart-item";
+  setTotalCartPrice();
+  
 
   handleCartButtonsClicked();
   handleCartSliderValueChanged();
+};
+
+const setTotalCartPrice = ()=>{
+  let totalCartPrice = 0;
+  Object.keys(productsInCart).forEach((key) =>{
+    totalCartPrice += productsInCart[key].totalPrice;
+  })
+
+  let totalPriceDiv = document.createElement('div');
+  const innerHtml = `<h4><b>Total price is: ${totalCartPrice}</b></h4>`;
+  const existingPriceElement = document.querySelector('.total-cart-price');
+  if(existingPriceElement){
+    existingPriceElement.innerHTML = innerHtml;
+  }else{
+    totalPriceDiv.innerHTML = innerHtml;
+    cartView.appendChild(totalPriceDiv).className = "cart-item total-cart-price";
+  }
+  
+  
 };
 
 const handleCartButtonsClicked = () => {
@@ -139,8 +154,11 @@ const handleCartButtonsClicked = () => {
       productsInCart[productToRemove] = { totalPrice: 0, amount: 0 }
       btn.closest('.cart-item').innerHTML = "";
       isCartEmpty();
+      setTotalCartPrice();
     });
   });
+
+
 }
 
 const isCartEmpty = ()=>{
