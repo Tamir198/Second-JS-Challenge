@@ -1,0 +1,89 @@
+:root{
+  --pixles20: 20px;
+}
+
+body{
+  background-color: gray;
+  font-size: 16px;
+}
+
+.show{
+  display: block;
+}
+
+.hide{
+  display: none !important;
+}
+
+.cart{
+  width: 30%;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+}
+
+h1{
+  margin: 50px auto;
+  width: 10%;
+  padding: 10px;
+}
+
+image{
+  object-fit:scale-down;
+}
+
+.grid-container {
+  max-width: 100%;
+  margin: var(--pixles20);
+  display:grid;
+  justify-content: space-evenly;
+  grid-template-columns: 25% 25% 25%; 
+  grid-column-gap:  var(--pixles20);
+  grid-row-gap:  var(--pixles20);
+}
+
+.grid-item{
+  margin: 30px;
+  display:flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  flex-flow: column;
+  justify-content:center;
+}
+
+.card {
+  max-width: 250px;
+  height: max-content;
+  border-radius:10px solid black;
+  border: 2px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+
+.footer {
+  position: fixed;
+  left: 40%;
+  bottom: 0;
+  width: 20%;
+  background-color: palegoldenrod;
+  color: purple;
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 500px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 37px) {
+  .grid-container {
+    grid-template-columns: 80%; 
+  }
+}
