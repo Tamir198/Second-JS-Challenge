@@ -37,11 +37,11 @@ window.onload = () => {
 
     productsGrid.appendChild(newGridItem).className = "grid-item";
   });
-  addListnersToBUttons();
+  handleGridButtonsClick();
   toggleShopCart();
 }
 
-const addListnersToBUttons = () => {
+const handleGridButtonsClick = () => {
   let buttons = Array.from(document.querySelectorAll(".grid-button"));
   console.log(buttons);
   buttons.forEach(btn => {
@@ -68,24 +68,38 @@ function toggleShopCart() {
 
 
 function showCartToUser() {
-  let cart = document.querySelector('.cart');
-
+  cartView.innerHTML = 'Your cart';
   Object.keys(productsInCart).forEach(function (key) {
     if (productsInCart[key].amount > 0) {
       const currentProduct = productsInCart[key];
-        let newCartItem = document.createElement('div');
-        newCartItem.innerHTML = `
+      let newCartItem = document.createElement('div');
+      newCartItem.innerHTML = `
         <div class="card">
             <div class="grid-item">
               <h4><b>Name: ${key}</b></h4> 
               <h4><b>Amount: ${currentProduct.amount}</b></h4> 
               <p>Total price: ${currentProduct.totalPrice}$</p> 
               <button 
-              class="grid-button" >Remove from cart
+              class="grid-button remove-from-cart-butoon" currentProduct="${key}"  >Remove from cart
               </button>
           </div>
         </div>
         `;
-        cartView.appendChild(newCartItem).className = "cart-item";
-      }
-})};
+      cartView.appendChild(newCartItem).className = "cart-item";
+    }
+
+    handleCartButtonsClicked()
+  })
+};
+
+const handleCartButtonsClicked = () => {
+  const buttons = document.querySelectorAll(".remove-from-cart-butoon");
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const productToRemove = btn.getAttribute("currentProduct");
+      productsInCart[productToRemove] = { totalPrice: 0, amount: 0 }
+      btn.closest('.cart-item').innerHTML = "";
+    });
+  });
+
+}
