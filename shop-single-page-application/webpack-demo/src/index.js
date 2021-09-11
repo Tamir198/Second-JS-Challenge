@@ -105,8 +105,26 @@ const handleCartButtonsClicked = () => {
       const productToRemove = btn.getAttribute("currentProduct");
       productsInCart[productToRemove] = { totalPrice: 0, amount: 0 }
       btn.closest('.cart-item').innerHTML = "";
+      isCartEmpty();
     });
   });
+}
+
+const isCartEmpty = ()=>{
+  let isEmpty = true;
+
+  Object.keys(productsInCart).forEach((key) => {
+    console.log(productsInCart[key].amount);
+    if (productsInCart[key].amount > 0) {
+      isEmpty = false;
+      return;
+    }
+  });
+
+  if(isEmpty){
+  alert("This was your last item, cart will now be empty");
+  }
+
 }
 
 
