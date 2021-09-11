@@ -17,10 +17,10 @@ let productsInCart = {
 }
 
 window.onload = () => {
-
   Data.forEach(item => {
     const newGridItem = document.createElement('div');
-    newGridItem.innerHTML = `
+    newGridItem.innerHTML = 
+    `
     <div class="card">
       <img src=${item.image} style="width:100%">
        <div class="grid-item">
@@ -48,9 +48,9 @@ window.onload = () => {
 }
 
 function handleShopSlidersValueChanged() {
-  const cartSliders = Array.from(document.querySelectorAll('.shop-slider'));
+  const shopSliders = Array.from(document.querySelectorAll('.shop-slider'));
 
-  cartSliders.forEach(slider => {
+  shopSliders.forEach(slider => {
     slider.addEventListener("change",() =>{
       slider.nextElementSibling.value = slider.value;
     })
@@ -59,28 +59,28 @@ function handleShopSlidersValueChanged() {
 };
 
 const handleGridButtonsClick = () => {
-  let buttons = Array.from(document.querySelectorAll(".grid-button"));
-  buttons.forEach(btn => {
+  let gridButtons = Array.from(document.querySelectorAll(".grid-button"));
+
+  gridButtons.forEach(btn => {
     btn.addEventListener("click", () => {
+
       const type = btn.getAttribute("productType");
       const price = btn.getAttribute("productPrice");
-      console.log(btn.closest('div').querySelector('.shop-slider').value);
-      const amountPIcked = parseInt(btn.closest('div').querySelector('.shop-slider').value);
-      productsInCart[type].amount += amountPIcked;
+      const productAmountPickedByUser = parseInt(btn.closest('div').querySelector('.shop-slider').value);
+      productsInCart[type].amount += productAmountPickedByUser;
       productsInCart[type].totalPrice = (productsInCart[type].amount * price);
     });
-    //TODO change slider to 1 after the button was pressed
-    btn.closest('div').querySelector('.shop-slider').textContent = "1";
+
+    //TODO change slider to 1 after add to cart button clicked
+    btn.closest('div').querySelector('.shop-slider').value = "1";
 
   });
 };
 
-
-
 function toggleShopAndCartPage() {
-  let footer = document.getElementById('footer-text');
-  footer.addEventListener("click", () => {
+  const footer = document.getElementById('footer-text');
 
+  footer.addEventListener("click", () => {
     productsGrid.classList.toggle('hide');
     cartView.classList.toggle('hide');
 
@@ -93,12 +93,13 @@ function toggleShopAndCartPage() {
 
 function showCartToUser() {
   cartView.innerHTML = 'Your cart';
+
   Object.keys(productsInCart).forEach((key) =>{
     if (productsInCart[key].amount > 0) {
-      
+  
       const currentProduct = productsInCart[key];
+      const newCartItem = document.createElement('div');
 
-      let newCartItem = document.createElement('div');
       newCartItem.innerHTML = `
         <div class="card">
             <div class="grid-item">
@@ -115,56 +116,62 @@ function showCartToUser() {
           </div>
         </div>
         `;
+
       cartView.appendChild(newCartItem).className = "cart-item";
-    }
-    
-  })
+    };
+  });
 
   setTotalCartPrice();
-  
-
   handleCartButtonsClicked();
   handleCartSliderValueChanged();
 };
 
-const setTotalCartPrice = ()=>{
-  let totalCartPrice = 0;
-  Object.keys(productsInCart).forEach((key) =>{
-    totalCartPrice += productsInCart[key].totalPrice;
-  })
-
-  let totalPriceDiv = document.createElement('div');
-  const innerHtml = `<h4><b>Total price is: ${totalCartPrice}</b></h4>`;
+const setTotalCartPrice = () =>{
+  const totalPriceDiv = document.createElement('div');
+  const totalPriceInnerHtml = `<h4><b>Total price is: ${getTotalCartPrice()}</b></h4>`;
   const existingPriceElement = document.querySelector('.total-cart-price');
+
   if(existingPriceElement){
-    existingPriceElement.innerHTML = innerHtml;
+    existingPriceElement.innerHTML = totalPriceInnerHtml;
   }else{
-    totalPriceDiv.innerHTML = innerHtml;
+    totalPriceDiv.innerHTML = totalPriceInnerHtml;
     cartView.appendChild(totalPriceDiv).className = "cart-item total-cart-price";
   }
-  
+
 };
 
+const getTotalCartPrice = ()=>{
+  let totalCartPrice = 0;
+
+  Object.keys(productsInCart).forEach((key) =>{
+    totalCartPrice += productsInCart[key].totalPrice;
+  });
+
+  return totalCartPrice;
+}
+
 const handleCartButtonsClicked = () => {
-  const buttons = document.querySelectorAll(".remove-all-from-cart-button");
-  buttons.forEach(btn => {
+  const cartButtons = document.querySelectorAll(".remove-all-from-cart-button");
+
+  cartButtons.forEach(btn => {
     btn.addEventListener("click", () => {
+
       const productToRemove = btn.getAttribute("currentProduct");
       productsInCart[productToRemove] = { totalPrice: 0, amount: 0 }
       btn.closest('.cart-item').innerHTML = "";
+
       isCartEmpty();
       setTotalCartPrice();
+
     });
   });
-
-
 }
 
 const isCartEmpty = ()=>{
   let isEmpty = true;
 
   Object.keys(productsInCart).forEach((key) => {
-    console.log(productsInCart[key].amount);
+
     if (productsInCart[key].amount > 0) {
       isEmpty = false;
       return;
@@ -177,19 +184,21 @@ const isCartEmpty = ()=>{
 
 }
 
-
 function handleCartSliderValueChanged() {
   const cartSliders = Array.from(document.querySelectorAll('.cart-slider'));
+
   cartSliders.forEach(slider => {
-    
     slider.addEventListener("change",() =>{
+
       const currentProduct = productsInCart[slider.getAttribute("currentProduct")];
       const productPrice = currentProduct.totalPrice / currentProduct.amount;
-      slider.nextElementSibling.value = slider.value;
 
+      slider.nextElementSibling.value = slider.value;
       currentProduct.amount = slider.value;
       currentProduct.totalPrice = slider.value * productPrice;
+
       showCartToUser();
+
     })
   });
 

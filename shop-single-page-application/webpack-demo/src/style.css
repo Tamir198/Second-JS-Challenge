@@ -1,5 +1,6 @@
 :root{
   --pixles20: 20px;
+  --pixles10: 10px;
 }
 
 body{
@@ -25,7 +26,7 @@ body{
 h1{
   margin: 50px auto;
   width: 10%;
-  padding: 10px;
+  padding: var(--pixles10);
 }
 
 image{
@@ -45,15 +46,14 @@ image{
 .grid-item{
   margin: 30px;
   display:flex;
-  justify-content: flex-end;
   flex-wrap: wrap;
   flex-flow: column;
   justify-content:center;
 }
 
 .card {
-  max-width: 250px;
-  height: max-content;
+  height: min-content;
+  width: 200px;
   border-radius:10px solid black;
   border: 2px solid black;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -64,6 +64,7 @@ image{
 }
 
 .footer {
+  font-size: 20px;
   position: fixed;
   left: 40%;
   bottom: 0;
@@ -74,16 +75,3 @@ image{
 }
 
 
-@media only screen and (max-width: 500px) {
-  .grid-container {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-  }
-}
-
-@media only screen and (max-width: 37px) {
-  .grid-container {
-    grid-template-columns: 80%; 
-  }
-}

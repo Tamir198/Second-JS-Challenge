@@ -54,7 +54,7 @@ const data = [
   },
   {
     name: "Avocado",
-    description: "For maximum taste add salt",
+    description: "Add salt",
     image: Avocado,
     price: 16
   },
