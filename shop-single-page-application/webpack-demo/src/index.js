@@ -37,8 +37,9 @@ window.onload = () => {
 
     productsGrid.appendChild(newGridItem).className = "grid-item";
   });
+
   handleGridButtonsClick();
-  toggleShopCart();
+  toggleShopAndCartPage();
 }
 
 const handleGridButtonsClick = () => {
@@ -54,18 +55,19 @@ const handleGridButtonsClick = () => {
   });
 };
 
-function toggleShopCart() {
+function toggleShopAndCartPage() {
   let footer = document.getElementById('footer-text');
   footer.addEventListener("click", () => {
+
     productsGrid.classList.toggle('hide');
     cartView.classList.toggle('hide');
 
     if (!cartView.classList.contains('hide')) {
       showCartToUser();
     }
+
   });
 }
-
 
 function showCartToUser() {
   cartView.innerHTML = 'Your cart';
@@ -78,22 +80,26 @@ function showCartToUser() {
             <div class="grid-item">
               <h4><b>Name: ${key}</b></h4> 
               <h4><b>Amount: ${currentProduct.amount}</b></h4> 
-              <p>Total price: ${currentProduct.totalPrice}$</p> 
+              <div>
+              <input class="cart-slider" currentProduct="${key}" type="range" value="${currentProduct.amount}"  min="1" max="50">
+              <output>${currentProduct.amount}</output> 
+              </div>
+              <p>Total price: ${currentProduct.totalPrice}$</p>
               <button 
-              class="grid-button remove-from-cart-butoon" currentProduct="${key}"  >Remove from cart
+              class="grid-button remove-all-from-cart-button" currentProduct="${key}"  >Remove from cart
               </button>
           </div>
         </div>
         `;
       cartView.appendChild(newCartItem).className = "cart-item";
     }
-
-    handleCartButtonsClicked()
   })
+  handleCartButtonsClicked();
+  handleCartSliderValueChanged();
 };
 
 const handleCartButtonsClicked = () => {
-  const buttons = document.querySelectorAll(".remove-from-cart-butoon");
+  const buttons = document.querySelectorAll(".remove-all-from-cart-button");
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
       const productToRemove = btn.getAttribute("currentProduct");
@@ -101,5 +107,22 @@ const handleCartButtonsClicked = () => {
       btn.closest('.cart-item').innerHTML = "";
     });
   });
-
 }
+
+
+function handleCartSliderValueChanged() {
+  const cartSliders = Array.from(document.querySelectorAll('.cart-slider'));
+  cartSliders.forEach(slider => {
+    
+    slider.addEventListener("change",() =>{
+      const currentProduct = productsInCart[slider.getAttribute("currentProduct")];
+      const productPrice = currentProduct.totalPrice / currentProduct.amount;
+      slider.nextElementSibling.value = slider.value;
+
+      currentProduct.amount = slider.value;
+      currentProduct.totalPrice = slider.value * productPrice;
+      showCartToUser();
+    })
+  });
+
+};
