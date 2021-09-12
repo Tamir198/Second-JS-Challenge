@@ -1,4 +1,4 @@
-import Banana from './assets/banana.jpg'
+import Banana from  './assets/banana.jpg'
 import Apple from './assets/apple.jpg'
 import Avocado from './assets/avocado.jpg'
 import Basil from './assets/basil.jpg'
