@@ -6,7 +6,7 @@ export default class Cart {
   }
 
   showCartToUser() {
-    this.cartView.innerHTML = 'Welcome to your cart '+ "\n" + "<br></br>";
+    this.cartView.innerHTML = "Your Items";
 
     Object.keys(this.productsInCart).forEach((key) => {
       if (this.productsInCart[key].amount > 0) {
@@ -42,7 +42,7 @@ export default class Cart {
 
   setTotalCartPrice = () => {
     const totalPriceDiv = document.createElement('div');
-    const totalPriceInnerHtml = `<h4><b>Total price is: ${this.getTotalCartPrice()}</b></h4>`;
+    const totalPriceInnerHtml = `<h4><b>Total Cart price is: ${this.getTotalCartPrice()}</b></h4>`;
     const existingPriceElement = document.querySelector('.total-cart-price');
 
     if (existingPriceElement) {
