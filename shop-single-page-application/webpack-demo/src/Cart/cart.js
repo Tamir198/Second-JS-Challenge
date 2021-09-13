@@ -6,7 +6,7 @@ export default class Cart {
   }
 
   showCartToUser() {
-    this.cartView.innerHTML = 'Your cart';
+    this.cartView.innerHTML = 'Welcome to your cart '+ "\n" + "<br></br>";
 
     Object.keys(this.productsInCart).forEach((key) => {
       if (this.productsInCart[key].amount > 0) {
@@ -15,8 +15,8 @@ export default class Cart {
         const newCartItem = document.createElement('div');
 
         newCartItem.innerHTML = `
-          <div class="card">
-              <div class="grid-item">
+          <div class="cart">
+              <div>
                 <h4><b>Name: ${key}</b></h4> 
                 <h4><b>Amount: ${currentProduct.amount}</b></h4> 
                 <div>

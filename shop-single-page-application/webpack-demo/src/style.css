@@ -4,8 +4,15 @@
 }
 
 body{
-  background-color: gray;
-  font-size: 16px;
+  background-color: #97a7aa;
+  font-size: 20px;
+}
+
+button{
+  border-radius: 20px;
+  background: aquamarine;
+  padding: 6px;
+  margin: 6px;
 }
 
 .show{
@@ -17,10 +24,18 @@ body{
 }
 
 .cart{
-  width: 30%;
-  background-color: green;
+  width: max-content;
+  height: 200px;
+  z-index: 16px;
+  margin: 8px;
   display: flex;
-  flex-direction: column;
+  color: black;
+  background: white;
+  border-radius:10px solid black;
+  border: 2px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 16px;
+
 }
 
 h1{
@@ -29,8 +44,10 @@ h1{
   padding: var(--pixles10);
 }
 
-image{
-  object-fit:scale-down;
+img{
+  height: 250px;
+  object-fit: fill;
+  border-radius: 20px;
 }
 
 .grid-container {
@@ -38,13 +55,14 @@ image{
   margin: var(--pixles20);
   display:grid;
   justify-content: space-evenly;
-  grid-template-columns: 25% 25% 25%; 
+  grid-template-columns: 30% 30% 30%; 
   grid-column-gap:  var(--pixles20);
   grid-row-gap:  var(--pixles20);
 }
 
 .grid-item{
   margin: 30px;
+  align-items: center;
   display:flex;
   flex-wrap: wrap;
   flex-flow: column;
@@ -52,11 +70,17 @@ image{
 }
 
 .card {
-  height: min-content;
-  width: 200px;
+  width: 250px;
+  height: 600px;
+  z-index: 16px;
+  margin: 50px;
+  color: black;
+  background: white;
+  /* background: radial-gradient(ellipse at top, rgba(63,94,251,1) 0%, rgba(171,76,126,1) 81%, rgba(179,75,117,1) 95%, rgba(196,72,97,1) 50%); */
   border-radius:10px solid black;
   border: 2px solid black;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 16px;
 }
 
 .card:hover {
